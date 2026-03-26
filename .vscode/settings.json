@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // Run ESLint fixes (non-formatting) on save as well:
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Only format when a Prettier config exists (prevents surprise formatting in random folders)
+  "prettier.requireConfig": true
+}
