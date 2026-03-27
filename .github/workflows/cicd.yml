@@ -1,0 +1,15 @@
+name: CI/CD
+run-name: Build Images
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout codebase
+        uses: actions/checkout@v5
+      - name: build docker images
+        run: docker build . -t git.workshop.bteklabs.com/zaltsani/greeter-bebas-aja-yah:latest
+      - name: login to docker
+        run: echo ${{secrets.WORKSHOP_TOKEN}} | docker login --username zaltsani --password-stdin git.workshop.bteklabs.com
+      - name: push images to registry
+        run: docker push git.workshop.bteklabs.com/zaltsani/greeter-bebas-aja-yah:latest
