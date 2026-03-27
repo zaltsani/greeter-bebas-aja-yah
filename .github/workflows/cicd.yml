@@ -11,7 +11,12 @@ jobs:
       - name: checkout codebase
         uses: actions/checkout@v5
       - name: build docker images
-        run: docker build . -t git.workshop.bteklabs.com/zaltsani/greeter-bebas-aja-yah:latest
+        run: |
+          docker build \
+            --build-arg VITE_SUPABASE_URL=${{secrets.VITE_SUPABASE_URL}} \
+            --build-arg VITE_SUPABASE_ANON_KEY=${{secrets.VITE_SUPABASE_ANON_KEY}} \
+            -t \
+            git.workshop.bteklabs.com/zaltsani/greeter-bebas-aja-yah:latest .
       - name: login to docker
         run: echo ${{secrets.WORKSHOP_TOKEN}} | docker login --username zaltsani --password-stdin git.workshop.bteklabs.com
       - name: push images to registry
