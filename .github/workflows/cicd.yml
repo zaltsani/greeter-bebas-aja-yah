@@ -21,3 +21,14 @@ jobs:
         run: echo ${{secrets.WORKSHOP_TOKEN}} | docker login --username zaltsani --password-stdin git.workshop.bteklabs.com
       - name: push images to registry
         run: docker push git.workshop.bteklabs.com/zaltsani/greeter-bebas-aja-yah:latest
+      - name: pulling and rerun images
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd server-app
+            docker-compose pull
+            docker-compose up -d
