@@ -8,8 +8,8 @@ export function WelcomeMessage() {
   const currentDate = getCurrentDateFormatted()
 
   return (
-    <div className="grid gap-2">
-      <div className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl grid">
+    <div className="grid gap-2 w-full px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-12 rounded-lg border border-primary/50">
+      <div className="font-bold text-2xl lg:text-3xl grid">
         <p>{greeting},</p>
         <p>{name}</p>
       </div>
