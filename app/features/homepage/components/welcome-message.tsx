@@ -1,5 +1,8 @@
+import { greeting_list_definition } from "../greeting/greeting-list-definition";
+import { useGreetingSelection } from "../greeting/greeting-selection";
+
 export function WelcomeMessage() {
-  const greeting = "Hello";
+  const greeting = useGreetingSelection(greeting_list_definition);
   const name = "Zaltsani Fadlillah";
 
   return (
