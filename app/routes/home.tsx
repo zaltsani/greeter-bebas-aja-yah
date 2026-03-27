@@ -8,6 +8,7 @@ export default function Home() {
         <WelcomeMessage />
         <Emotions />
       </div>
+      <h1>test CI/CD</h1>
     </div>
   )
 }
