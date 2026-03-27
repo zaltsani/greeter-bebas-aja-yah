@@ -4,6 +4,9 @@ on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      VITE_SUPABASE_URL: ${{VITE_SUPABASE_URL}}
+      VITE_SUPABASE_ANON_KEY: ${{VITE_SUPABASE_ANON_KEY}}
     steps:
       - name: checkout codebase
         uses: actions/checkout@v5
