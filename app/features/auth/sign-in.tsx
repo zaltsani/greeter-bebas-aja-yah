@@ -24,7 +24,7 @@ export function LoginFeature() {
             setErrorMsg(error.message);
             setIsLoading(false);
         } else {
-            navigate("/dashboard");
+            navigate("/");
         }
     };
 
