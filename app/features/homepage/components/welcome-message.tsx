@@ -1,9 +1,11 @@
+import { getCurrentDateFormatted } from "~/utils/get-current-date-formatted";
 import { greeting_list_definition } from "../greeting/greeting-list-definition";
 import { useGreetingSelection } from "../greeting/greeting-selection";
 
 export function WelcomeMessage() {
   const greeting = useGreetingSelection(greeting_list_definition);
   const name = "Zaltsani Fadlillah";
+  const currentDate = getCurrentDateFormatted()
 
   return (
     <div className="grid gap-2">
@@ -11,7 +13,7 @@ export function WelcomeMessage() {
         <p>{greeting},</p>
         <p>{name}</p>
       </div>
-      <p className="sm:text-lg">Today is Friday, October 27th. A perfect day to nurture your inner glow.</p>
+      <p className="sm:text-lg">Today is {currentDate}. A perfect day to nurture your inner glow.</p>
     </div>
   )
 }
