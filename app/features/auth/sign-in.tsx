@@ -83,6 +83,9 @@ export function LoginFeature() {
                         </div>
 
                         <div className="space-y-2">
+                            <label className="block text-xs font-bold uppercase tracking-[0.15em] text-[#615e5c] ml-1">
+                                Password
+                            </label>
                             <div className="relative">
                                 <Input
                                     className="h-14 bg-white border-none rounded-2xl focus-visible:ring-2 focus-visible:ring-[#a04223]/10"
@@ -107,9 +110,6 @@ export function LoginFeature() {
                         <div className="absolute inset-0 flex items-center">
                             <div className="w-full border-t border-[#b5b1af]/20"></div>
                         </div>
-                        <span className="relative bg-[#f8f2f0] px-4 text-[10px] font-bold text-[#b5b1af] uppercase tracking-[0.2em]">
-                            Or continue with
-                        </span>
                     </div>
                 </div>
 
