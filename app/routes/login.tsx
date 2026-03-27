@@ -1,9 +1,15 @@
-import type { Route } from "./+types/login";
+import type { MetaFunction } from "react-router";
+import { LoginFeature } from "~/features/auth/sign-in";
 
-export default function Login({}: Route.ComponentProps) {
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Hearth - Welcome Back" },
+    { name: "description", content: "Sign in to your Hearth account" },
+  ];
+};
+
+export default function LoginRoute() {
   return (
-    <div className="flex min-h-svh items-center justify-center p-6">
-      <h1>Login</h1>
-    </div>
+    <LoginFeature />
   );
 }
