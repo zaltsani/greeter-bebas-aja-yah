@@ -1,5 +1,5 @@
 name: CI/CD
-run-name: Build Images
+run-name: Build Docker Images
 on: [push]
 jobs:
   build-and-deploy:
